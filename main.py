@@ -2,7 +2,7 @@ import pygame
 
 pygame.init()
 pygame.display.set_caption("top down grid game")
-screen = pygame.display.set_mode((500, 500))
+screen = pygame.display.set_mode((1000, 800))
 clock = pygame.time.Clock()
 gameover = False
 
