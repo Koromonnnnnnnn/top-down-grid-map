@@ -29,6 +29,25 @@ class player:
         pygame.draw.rect(screen, (255, 0, 255), (self.xpos, self.ypos, 30, 30))
 
 
+def move(self, keys, map):
+
+    if keys[LEFT] == True:
+        self.vx = -3
+        print("Moving left")
+    elif keys[RIGHT] == True:
+        self.vx = 3
+        print("Moving right")
+    else:
+        self.vx = 0
+
+    if map[int((self.ypos - 10) / 50)][int((self.xpos - 10) / 50)] == 2:
+        self.xpos += 3
+    if map[int((self.ypos) / 50)][int((self.xpos + 30 + 5) / 50)] == 2:
+        self.xpos -= 3
+
+    self.xpos += self.vx
+
+
 map = [
     [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
     [2, 0, 0, 0, 0, 2, 2, 0, 0, 2],
