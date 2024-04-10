@@ -7,7 +7,6 @@ DOWN = 3
 SPACE = 4
 W = 5
 
-
 class player:
     def __init__(self):
 
