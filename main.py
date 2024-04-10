@@ -8,6 +8,27 @@ gameover = False
 
 
 FPS = 60
+
+LEFT = 0
+RIGHT = 1
+UP = 2
+DOWN = 3
+SPACE = 4
+W = 5
+
+
+class player:
+    def __init__(self):
+
+        self.xpos = 400
+        self.ypos = 415
+        self.vx = 0
+        self.vy - 0
+
+    def draw(self, screen):
+        pygame.draw.rect(screen, (255, 0, 255), (self.xpos, self.ypos, 30, 30))
+
+
 map = [
     [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
     [2, 0, 0, 0, 0, 2, 2, 0, 0, 2],
