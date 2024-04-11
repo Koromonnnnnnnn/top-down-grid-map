@@ -19,7 +19,7 @@ class player:
         self.ypos = 415
         self.vx = 0
         self.vy = 0
-        # animation variables variables
+
         self.frameWidth = 64
         self.frameHeight = 96
         self.RowNum = 0  # for left animation
