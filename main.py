@@ -7,6 +7,14 @@ screen = pygame.display.set_mode((1000, 800))
 clock = pygame.time.Clock()
 gameover = False
 
+LEFT = 0
+RIGHT = 1
+UP = 2
+DOWN = 3
+SPACE = 4
+W = 5
+keys = [False, False, False, False, False]
+
 p1 = player()
 FPS = 60
 
@@ -33,6 +41,24 @@ while not gameover:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             gameover = True
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                keys[LEFT] = True
+            elif event.key == pygame.K_RIGHT:
+                keys[RIGHT] = True
+            elif event.key == pygame.K_UP:
+                keys[UP] = True
+            elif event.key == pygame.K_DOWN:
+                keys[DOWN] = True
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT:
+                keys[LEFT] = False
+            elif event.key == pygame.K_RIGHT:
+                keys[RIGHT] = False
+            elif event.key == pygame.K_UP:
+                keys[UP] = False
+            elif event.key == pygame.K_DOWN:
+                keys[DOWN] = False
 
     # physics section
     p1.move(keys, map)
@@ -72,6 +98,7 @@ while not gameover:
                     ),
                     (0, 0, 50, 50),
                 )
+        p1.draw(screen)
 
     pygame.display.flip()
 

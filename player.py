@@ -6,6 +6,7 @@ UP = 2
 DOWN = 3
 SPACE = 4
 W = 5
+keys = [False, False, False, False, False]
 
 class player:
     def __init__(self):
@@ -22,12 +23,15 @@ class player:
 
         if keys[LEFT] == True:
             self.vx = -3
-            print("Moving left")
         elif keys[RIGHT] == True:
             self.vx = 3
-            print("Moving right")
+        elif keys[UP] == True:
+            self.vy = -3
+        elif keys[DOWN] == True:
+            self.vy = 3
         else:
             self.vx = 0
+            self.vy = 0
 
         if map[int((self.ypos - 10) / 50)][int((self.xpos - 10) / 50)] == 2:
             self.xpos += 3
@@ -35,3 +39,4 @@ class player:
             self.xpos -= 3
 
         self.xpos += self.vx
+        self.ypos += self.vy
