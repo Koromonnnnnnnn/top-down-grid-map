@@ -8,6 +8,7 @@ SPACE = 4
 W = 5
 keys = [False, False, False, False, False]
 
+
 class player:
     def __init__(self):
 
