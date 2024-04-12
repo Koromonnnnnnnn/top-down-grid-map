@@ -1,5 +1,6 @@
 import pygame
 from player import player
+from fireball import fireball
 
 pygame.init()
 pygame.display.set_caption("top down grid game")
@@ -16,6 +17,7 @@ W = 5
 keys = [False, False, False, False, False]
 
 p1 = player()
+f1 = fireball()
 FPS = 60
 
 map = [
@@ -50,6 +52,8 @@ while not gameover:
                 keys[UP] = True
             elif event.key == pygame.K_DOWN:
                 keys[DOWN] = True
+            elif event.key == pygame.K_DOWN:
+                keys[SPACE] = True
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT:
                 keys[LEFT] = False
@@ -59,9 +63,14 @@ while not gameover:
                 keys[UP] = False
             elif event.key == pygame.K_DOWN:
                 keys[DOWN] = False
+            elif event.key == pygame.K_DOWN:
+                keys[SPACE] = False
 
     # physics section
     p1.move(keys, map)
+    f1.move()
+    if keys[SPACE] == True:
+        f1.shoot(p1.xpos, p1.ypos, p1.direction)
 
     # render section
 
@@ -98,7 +107,11 @@ while not gameover:
                     ),
                     (0, 0, 50, 50),
                 )
-        p1.draw(screen)
+
+    p1.draw(screen)
+
+    if f1.isAlive == True:
+        f1.draw(screen)
 
     pygame.display.flip()
 
