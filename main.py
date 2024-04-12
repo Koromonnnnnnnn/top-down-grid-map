@@ -52,7 +52,7 @@ while not gameover:
                 keys[UP] = True
             elif event.key == pygame.K_DOWN:
                 keys[DOWN] = True
-            elif event.key == pygame.K_DOWN:
+            elif event.key == pygame.K_SPACE:
                 keys[SPACE] = True
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT:
@@ -63,7 +63,7 @@ while not gameover:
                 keys[UP] = False
             elif event.key == pygame.K_DOWN:
                 keys[DOWN] = False
-            elif event.key == pygame.K_DOWN:
+            elif event.key == pygame.K_SPACE:
                 keys[SPACE] = False
 
     # physics section

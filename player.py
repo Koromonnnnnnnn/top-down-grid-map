@@ -19,6 +19,7 @@ class player:
         self.ypos = 415
         self.vx = 0
         self.vy = 0
+        self.direction = LEFT
 
         self.frameWidth = 64
         self.frameHeight = 96
@@ -59,19 +60,19 @@ class player:
 
         if keys[LEFT] == True:
             self.vx = -3
-            self.direction = 0
+            self.direction = LEFT
             self.RowNum = 0
         elif keys[RIGHT] == True:
             self.vx = 3
-            self.direction = 1
+            self.direction = RIGHT
             self.RowNum = 1
         elif keys[UP] == True:
             self.vy = -3
-            self.direction = 2
+            self.direction = UP
             self.RowNum = 2
         elif keys[DOWN] == True:
             self.vy = 3
-            self.direction = 3
+            self.direction = DOWN
             self.RowNum = 3
         else:
             self.vx = 0
