@@ -1,10 +1,11 @@
 import pygame
 from player import player
 from fireball import fireball
+from menu import menu
 
 pygame.init()
 pygame.display.set_caption("top down grid game")
-screen = pygame.display.set_mode((1000, 800))
+screen = pygame.display.set_mode((1200, 800))
 clock = pygame.time.Clock()
 gameover = False
 
@@ -18,6 +19,7 @@ keys = [False, False, False, False, False]
 
 p1 = player()
 f1 = fireball()
+menuInit = menu()
 FPS = 60
 
 map = [
@@ -71,11 +73,11 @@ while not gameover:
     f1.move()
     if keys[SPACE] == True:
         f1.shoot(p1.xpos, p1.ypos, p1.direction)
+    menuInit.input()
 
     # render section
 
     screen.fill((0, 0, 0))
-    p1.draw(screen)
 
     # draw map
     for i in range(10):
@@ -112,6 +114,8 @@ while not gameover:
 
     if f1.isAlive == True:
         f1.draw(screen)
+    
+    menuInit.draw(screen)
 
     pygame.display.flip()
 
