@@ -17,6 +17,7 @@ DOWN = 3
 SPACE = 4
 W = 5
 keys = [False, False, False, False, False]
+ticker = 0
 
 p1 = player()
 e1 = enemy()

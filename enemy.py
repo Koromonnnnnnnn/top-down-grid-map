@@ -20,7 +20,6 @@ class enemy:
         screen.blit(enemy, (self.xpos, self.ypos, 20, 20))
 
     def move(self, map, ticker, px, py):
-        ticker = 0
         if ticker % 40 == 0:
             num = random.randrange(0, 4)
             if num == 0:
