@@ -115,7 +115,6 @@ while not gameover:
                 )
 
     p1.draw(screen)
-    e1.draw(screen)
 
     if f1.isAlive == True:
         f1.draw(screen)
