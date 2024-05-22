@@ -55,6 +55,7 @@ while not gameover:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             gameover = True
+            
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 keys[LEFT] = True
