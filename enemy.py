@@ -15,6 +15,7 @@ class enemy:
         self.xpos = 400
         self.ypos = 200
         self.direction = RIGHT
+        self.ticker = 0
 
     def draw(self, screen):
         screen.blit(enemy, (self.xpos, self.ypos, 20, 20))
