@@ -1,9 +1,10 @@
 import pygame
+import sys
 from player import player
 from fireball import fireball
 from enemy import enemy
 
-#from menu import Menu
+from menu import Menu
 
 pygame.init()
 pygame.display.set_caption("top down grid game")
@@ -23,7 +24,7 @@ ticker = 0
 p1 = player()
 e1 = enemy()
 f1 = fireball()
-#menu = Menu()
+menu = Menu()
 FPS = 60
 
 map = [
@@ -85,7 +86,7 @@ while not gameover:
     if keys[SPACE] == True:
         f1.shoot(p1.xpos, p1.ypos, p1.direction)
     e1.move(map, ticker, p1.xpos, p1.ypos)
-    # menu.input()
+    menu.input()
 
     # render section
 
@@ -127,7 +128,7 @@ while not gameover:
     if f1.isAlive == True:
         f1.draw(screen)
 
-    #menu.draw(screen)
+    menu.draw(screen)
 
     pygame.display.flip()
 

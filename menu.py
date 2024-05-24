@@ -32,8 +32,8 @@ class Menu:
                 (700, 400, 200, 150),
             )
         elif self.state == 2:
-            screen.fill((255, 255, 255)) # Clear the screen
-            pygame.draw.rect(screen, (100, 230, 100), (100, 100, 200, 150)) # Example shape
+            screen.fill((255, 255, 255))
+            pygame.draw.rect(screen, (100, 230, 100), (100, 100, 200, 150))
         elif self.state == 3:
             screen.fill((50, 197, 200))
             pygame.draw.rect(screen, (100, 230, 100), (400, 400, 200, 150))
@@ -50,6 +50,14 @@ class Menu:
                 self.mousePos = event.pos
             if event.type == pygame.MOUSEBUTTONDOWN:
                 self.mouseDown = True
+                # Check which button was clicked and change state
+                if self.state == 1:
+                    if 100 < self.mousePos[0] < 300 and 400 < self.mousePos[1] < 550:
+                        self.state = 2
+                    elif 400 < self.mousePos[0] < 600 and 400 < self.mousePos[1] < 550:
+                        self.state = 3
+                    elif 700 < self.mousePos[0] < 900 and 400 < self.mousePos[1] < 550:
+                        self.state = 4
             if event.type == pygame.MOUSEBUTTONUP:
                 self.mouseDown = False
             if event.type == pygame.KEYDOWN:
